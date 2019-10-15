@@ -1,0 +1,31 @@
+.Shopping-cart {
+    width: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Shopping-cart-title {
+    font-size: 15px;
+}
+
+.Shopping-cart-icon {
+    --size: 24px;
+    width: var(--size);
+    height: var(--size);
+    background-image: url('https://uploads-ssl.webflow.com/5badda2935e11303a89a461e/5baf75c3bf02346640399fec_cart-icon.svg');
+    background-color: aliceblue;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Shopping-cart-counter {
+    --size: 20px;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    font-size: 14px;
+    border-radius: calc(var(--size)/2);
+    background-color: var(--accent-color);
+    color: white;
+}
