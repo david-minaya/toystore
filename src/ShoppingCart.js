@@ -6,7 +6,7 @@ function ShoppingCart() {
         <div className="Shopping-cart">
             <div className="Shopping-cart-title">Cart</div>
             <div className="Shopping-cart-icon"></div>
-            <div className="Shopping-cart-counter">0</div>
+            <div className="Shopping-cart-counter"></div>
         </div>
     )
 }
