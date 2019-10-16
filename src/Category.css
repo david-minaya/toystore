@@ -1,0 +1,6 @@
+.Category {
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

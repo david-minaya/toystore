@@ -1,0 +1,29 @@
+.CategoryWoodenToys {
+    width: 570px;
+    height: 188px;
+    background-color: #fb416b;
+    border-radius: 16px;
+    position: relative;
+    padding: 48px 40px;
+    margin: 0px 15px;
+    box-sizing: border-box;
+}
+
+.CategoryWoodenToys-image {
+    width: 220px;
+    position: absolute;
+    right: 15px;
+    bottom: 26px;
+}
+
+.CategoryWoodenToys-info {
+    margin-left: 80px;
+}
+
+.CategoryWoodenToys-info h3 {
+    color: white;
+}
+
+.CategoryWoodenToys-info button {
+    margin-left: 70px;
+}

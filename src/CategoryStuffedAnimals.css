@@ -1,0 +1,25 @@
+.CategoryStuffedAnimals {
+    width: 570px;
+    height: 188px;
+    background-color: #ffc12c;
+    border-radius: 16px;
+    position: relative;
+    padding: 48px 40px;
+    margin: 0px 15px;
+    box-sizing: border-box;
+}
+
+.CategoryStuffedAnimals-image {
+    width: 220px;
+    position: absolute;
+    left: 15px;
+    bottom: 26px;
+}
+
+.CategoryStuffedAnimals-info {
+    margin-left: 224px;
+}
+
+.CategoryStuffedAnimals-info h3 {
+    color: white;
+}
