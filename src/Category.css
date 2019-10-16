@@ -1,0 +1,24 @@
+.Category {
+    width: 1200px;
+    height: 468px;
+    margin: auto;
+    margin-bottom: 120px;
+}
+
+.Category-primary-line {
+    height: 2px;
+    background-color: #E5E5E5;
+    margin-top: 32px;
+}
+
+.Category-secondary-line {
+    height: 2px;
+    width: 132px;
+    background-color: var(--accent-color);
+}
+
+.Category-toys {
+    padding-top: 56px;
+    display: flex;
+    justify-content: space-between;
+}

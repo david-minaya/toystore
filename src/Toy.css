@@ -1,0 +1,39 @@
+.Toy {
+    width: 270px;
+    height: 328px;
+    background-color: white;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    border-radius: 16px;
+    text-align: center;
+    padding: 24px 24px 32px;
+    box-sizing: border-box;
+}
+
+.Toy:hover {
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, .15);
+    transform: scale(1.05) translate(0px, -2px);
+}
+
+.Toy img {
+    width: 182px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+}
+
+.Toy h6 {
+    margin-bottom: 12px;
+}
+
+.Toy-price {
+    width: 60px;
+    height: 24px;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 12px;
+    border-radius: 16px;
+    padding: 2px 12px;
+    line-height: 20px;
+    box-sizing: border-box;
+    font-weight: 600;
+    margin: auto;
+}

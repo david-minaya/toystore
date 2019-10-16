@@ -1,4 +1,7 @@
+.App {}
+
 .main {
     height: calc(100vh - var(--topbar-height));
     overflow-y: scroll;
+    background-color: var(--background-color);
 }
