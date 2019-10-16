@@ -1,0 +1,28 @@
+.Hero {
+    height: 80vh;
+    background-image: url('https://uploads-ssl.webflow.com/5badda2935e11303a89a461e/5baddd4835e113c6299a48f5_li-tzuni-507346-unsplash.jpg');
+    background-position: 50% 94%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Hero-card {
+    width: 570px;
+    height: 308px;
+    background-color: white;
+    border-radius: 16px;
+    text-align: center;
+    padding: 56px 48px;
+    box-sizing: border-box;
+}
+
+.Hero-title {
+    margin-bottom: 16px;
+    color: var(--accent-color);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+}
