@@ -1,0 +1,65 @@
+.Categories {
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Category stuffed animals */
+.Category-stuffedAnimals {
+    width: 570px;
+    height: 188px;
+    background-color: #ffc12c;
+    border-radius: 16px;
+    position: relative;
+    padding: 48px 40px;
+    margin: 0px 15px;
+    box-sizing: border-box;
+}
+
+.Category-stuffedAnimals-image {
+    width: 220px;
+    position: absolute;
+    left: 15px;
+    bottom: 26px;
+}
+
+.Category-stuffedAnimals-info {
+    margin-left: 224px;
+}
+
+.Category-stuffedAnimals-info h3 {
+    color: white;
+}
+
+/* Category wooden toys */
+.Category-woodenToys {
+    width: 570px;
+    height: 188px;
+    background-color: #fb416b;
+    border-radius: 16px;
+    position: relative;
+    padding: 48px 40px;
+    margin: 0px 15px;
+    box-sizing: border-box;
+}
+
+.Category-woodenToys-image {
+    width: 220px;
+    position: absolute;
+    right: 15px;
+    bottom: 26px;
+}
+
+.Category-woodenToys-info {
+    margin-left: 80px;
+}
+
+.Category-woodenToys-info h3 {
+    color: white;
+}
+
+.Category-woodenToys-info button {
+    margin-left: 70px;
+}
