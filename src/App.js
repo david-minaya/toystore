@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './Header';
 import Hero from './Hero';
-import Category from './Categories';
+import Categories from './Categories';
+import Category from './Category';
+import categoriesToys from './categoriesToys';
 
 function App() {
   return (
@@ -10,7 +12,8 @@ function App() {
       <Header/>
       <div className="main">
         <Hero/>
-        <Category/>
+        <Categories/>
+        {categoriesToys.map(category => <Category key={category.id} categoryToy={category} />)}
       </div>
     </div>
   );
