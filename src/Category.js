@@ -5,9 +5,6 @@ import Toy from './Toy';
 class Category extends React.Component {
 
     render() {
-
-        const toys = this.props.categoryToy.toys.map(toy => <Toy toy={toy}/>)
-
         return (
             <div className="Category">
                 <h3>{this.props.categoryToy.name}</h3>
@@ -15,7 +12,7 @@ class Category extends React.Component {
                     <div className="Category-secondary-line"></div>
                 </div>
                 <div className="Category-toys">
-                    {toys}
+                    {this.props.categoryToy.toys.map(toy => <Toy key={toy.id} toy={toy}/>)}
                 </div>
             </div>
         );

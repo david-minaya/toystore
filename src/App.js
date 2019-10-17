@@ -7,16 +7,13 @@ import Category from './Category';
 import categoriesToys from './categoriesToys';
 
 function App() {
-
-  const categories = categoriesToys.map(category => <Category categoryToy={category} />);
-
   return (
     <div className="App">
       <Header/>
       <div className="main">
         <Hero/>
         <Categories/>
-        {categories}
+        {categoriesToys.map(category => <Category key={category.id} categoryToy={category} />)}
       </div>
     </div>
   );
