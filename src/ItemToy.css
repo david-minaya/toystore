@@ -1,4 +1,4 @@
-.Toy {
+.ItemToy {
     width: 270px;
     height: 328px;
     background-color: white;
@@ -9,22 +9,22 @@
     box-sizing: border-box;
 }
 
-.Toy:hover {
+.ItemToy:hover {
     box-shadow: 0 8px 20px -4px rgba(0, 0, 0, .15);
     transform: scale(1.05) translate(0px, -2px);
 }
 
-.Toy img {
+.ItemToy img {
     width: 182px;
     margin-top: 12px;
     margin-bottom: 16px;
 }
 
-.Toy h6 {
+.ItemToy h6 {
     margin-bottom: 12px;
 }
 
-.Toy-price {
+.ItemToy-price {
     width: 60px;
     height: 24px;
     background-color: var(--accent-color);

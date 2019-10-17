@@ -1,20 +1,17 @@
 import React from 'react';
-import './App.css';
 import Header from './Header';
-import Hero from './Hero';
-import Categories from './Categories';
-import Category from './Category';
-import categoriesToys from './categoriesToys';
+import Main from './Main';
+import { Route, Switch } from 'react-router-dom';
+import DetailToy from './DetailToy';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <div className="main">
-        <Hero/>
-        <Categories/>
-        {categoriesToys.map(category => <Category key={category.id} categoryToy={category} />)}
-      </div>
+    <div className='App'>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Main} />
+        <Route exact path='/toy' component={DetailToy} />
+      </Switch>
     </div>
   );
 }

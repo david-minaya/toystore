@@ -1,0 +1,43 @@
+.DetailToy {
+    height: calc(100vh - var(--topbar-height));
+    display: flex;
+    flex-flow: column;
+    background-color: var(--background-color);
+    overflow-y: auto;
+}
+
+.DetailToy-detail {
+    width: 1170px;
+    height: 700px;
+    padding: 80px;
+    margin: auto;
+    margin-top: 56px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.DetailToy-detail-info {
+    width: 50%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+
+.DetailToy-detail-info h1 {
+    margin-bottom: 20px;
+}
+
+.DetailToy-detail-info p {
+    color: #999;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 28px;
+}
+
+.DetailToy-detail-info-price {
+    margin-bottom: 32px;
+    color: var(--accent-color);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
