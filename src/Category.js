@@ -1,6 +1,6 @@
 import React from 'react';
 import './Category.css';
-import Toy from './Toy';
+import ItemToy from './ItemToy';
 
 class Category extends React.Component {
 
@@ -12,7 +12,7 @@ class Category extends React.Component {
                     <div className="Category-secondary-line"></div>
                 </div>
                 <div className="Category-toys">
-                    {this.props.categoryToy.toys.map(toy => <Toy key={toy.id} toy={toy}/>)}
+                    {this.props.categoryToy.toys.map(toy => <ItemToy key={toy.id} toy={toy}/>)}
                 </div>
             </div>
         );

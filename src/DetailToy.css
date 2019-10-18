@@ -1,0 +1,81 @@
+.DetailToy {
+    height: calc(100vh - var(--topbar-height));
+    display: flex;
+    flex-flow: column;
+    background-color: var(--background-color);
+    overflow-y: auto;
+}
+
+.DetailToy-detail {
+    width: 1170px;
+    height: 700px;
+    padding: 80px;
+    margin: auto;
+    margin-top: 56px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    box-sizing: border-box;
+    border-radius: 16px;
+    display: flex;
+}
+
+.DetailToy-detail-info {
+    width: 50%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+
+.DetailToy-detail-info h1 {
+    margin-bottom: 20px;
+}
+
+.DetailToy-detail-info p {
+    color: #999;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 28px;
+}
+
+.DetailToy-detail-info-price {
+    margin-bottom: 32px;
+    color: var(--accent-color);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+}
+
+.DetailToy-detail-info-form {
+    width: 404px;
+    height: 80px;
+    margin-bottom: 16px;
+}
+
+.DetailToy-detail-info-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #111;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.DetailToy-detail-info-form input {
+    width: 88px;
+    height: 48px;
+    margin-right: 12px;
+    margin-bottom: 24px;
+    padding-right: 28px;
+    padding-left: 28px;
+    border: 2px solid #e5e5e5;
+    border-radius: 24px;
+    background-color: #f8f8f8;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.DetailToy-detail-info-form input:focus {
+    border-color: var(--accent-color);
+}
+
+.DetailToy-detail img {
+    width: 440px;
+    height: 440px;
+}
