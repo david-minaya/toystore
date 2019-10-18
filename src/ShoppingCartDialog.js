@@ -13,6 +13,7 @@ class ShippingCartDialog extends React.Component {
 
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleRemoveToyFromCart = this.handleRemoveToyFromCart.bind(this);
     }
 
     handleCloseDialog() {
@@ -22,6 +23,10 @@ class ShippingCartDialog extends React.Component {
     handleButtonClick(event) {
         this.setState({ isShowErrorMessage: true });
         event.stopPropagation();
+    }
+
+    handleRemoveToyFromCart(toy) {
+        this.props.onRemoveToyFromCart(toy);
     }
 
     render() {
@@ -41,8 +46,15 @@ class ShippingCartDialog extends React.Component {
                         </svg>
                     </div>
                     <div className='ShoppingCartDialog-card-body'>
-                        <ItemShoppingCart />
-                        <ItemShoppingCart />
+                        {
+                            this.props.toys.map(toy => {
+                                return (
+                                    <ItemShoppingCart
+                                        toy={toy}
+                                        onRemoveToyFromCart={this.handleRemoveToyFromCart} />
+                                );
+                            })
+                        }
                     </div>
                     <div className='ShoppingCartDialog-card-footer'>
                         <div>

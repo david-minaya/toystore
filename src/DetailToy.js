@@ -7,18 +7,28 @@ class DetailToy extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = { amount: 1 };
         this.toy = this.props.location.state.toy;
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
-    handleButtonClick() {
-        this.props.onAddToCard(this.toy)
+    handleButtonClick(event) {
+        const toyAdded = {...this.toy}
+        toyAdded.amount = this.state.amount;
+        this.props.onAddToCart(toyAdded)
+        event.preventDefault();
+    }
+
+    handleInputChange(event) {
+        console.log(typeof(event.value));
+        this.setState({amount: event.value})
     }
 
     render() {
         return (
             <div className='DetailToy'>
-                <PathBar name={this.toy.name}/>
+                <PathBar name={this.toy.name} />
                 <div className='DetailToy-detail'>
                     <div className='DetailToy-detail-info'>
                         <h1>{this.toy.name}</h1>
@@ -30,11 +40,11 @@ class DetailToy extends React.Component {
                            on a number of factors.
                         </p>
                         <div className='DetailToy-detail-info-price'>{`$${this.toy.price}.00`}</div>
-                        <form className='DetailToy-detail-info-form'>
+                        <div className='DetailToy-detail-info-form'>
                             <label>Quantity</label>
-                            <input type='number' min='1' value='1'/>
+                            <input type='number' min='1' value={this.state.amount} onChange={this.handleInputChange}/>
                             <button className='button-big' onClick={this.handleButtonClick}>Add To Cart</button>
-                        </form>
+                        </div>
                     </div>
                     <img src={this.toy.image} />
                 </div>
