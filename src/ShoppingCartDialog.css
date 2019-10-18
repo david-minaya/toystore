@@ -1,0 +1,81 @@
+.ShoppingCartDialog-background {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShoppingCartDialog-card {
+    width: 480px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.ShoppingCartDialog-card-header {
+    width: 480px;
+    height: 81px;
+    padding: 24px 32px;
+    border-bottom: 1px solid #E6E6E6;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+}
+
+.ShoppingCartDialog-card-header h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.ShoppingCartDialog-card-body {
+    padding: 16px 32px;
+    box-sizing: border-box;
+}
+
+.ShoppingCartDialog-card-footer {
+    height: 136px;
+    border-top: 1px solid #E6E6E6;
+    padding: 16px 32px 32px;
+    box-sizing: border-box;
+}
+
+.ShoppingCartDialog-card-footer > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ShoppingCartDialog-card-footer > div > .subtotal {
+    font-size: 14px;
+    color: #111;
+}
+
+.ShoppingCartDialog-card-footer > div > .amount {
+    font-size: 14px;
+    color: #111;
+    font-weight: 700;
+}
+
+.ShoppingCartDialog-card-footer > button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.ShoppingCartDialog-card > .error-message {
+    margin: 12px 24px 24px;
+    padding: 6px 20px;
+    border-radius: 16px;
+    background-color: rgba(251, 65, 107, 0.1);
+    color: #fb416b;
+    font-size: 12px;
+    line-height: 20px;
+}
