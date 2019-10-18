@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-.PathBar-link {
+.PathBar-link, .PathBar-name {
     display: inline;
     text-decoration: none;
     color: #999;
