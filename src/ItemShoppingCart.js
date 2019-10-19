@@ -1,5 +1,6 @@
 import React from 'react';
 import './ItemShoppingCart.css';
+import formatCurrency from './formatCurrency';
 
 class ItemShoppingCart extends React.Component {
 
@@ -16,11 +17,11 @@ class ItemShoppingCart extends React.Component {
     render() {
         return (
             <div className='ItemShoppingCart'>
-                <img src={this.props.toy.image} />
+                <img src={this.props.toy.image} alt='' />
                 <div>
                     <div className='ItemShoppingCart-title'>{this.props.toy.name}</div>
-                    <div className='ItemShoppingCart-price'>{this.props.toy.price}</div>
-                    <a href='#' className='ItemShoppingCart-remove' onClick={this.handleRemoveToy}>Remove</a>
+                    <div className='ItemShoppingCart-price'>{formatCurrency(this.props.toy.price)}</div>
+                    <div className='ItemShoppingCart-remove' onClick={this.handleRemoveToy}>Remove</div>
                 </div>
                 <input type='text' value={this.props.toy.amount}/>
             </div>

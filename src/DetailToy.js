@@ -2,6 +2,7 @@ import React from 'react';
 import './DetailToy.css';
 import { withRouter } from 'react-router-dom';
 import PathBar from './PathBar';
+import formatCurrency from './formatCurrency';
 
 class DetailToy extends React.Component {
 
@@ -14,15 +15,13 @@ class DetailToy extends React.Component {
     }
 
     handleButtonClick(event) {
-        const toyAdded = {...this.toy}
-        toyAdded.amount = this.state.amount;
-        this.props.onAddToCart(toyAdded)
+        const toy = { ...this.toy, amount: this.state.amount };
+        this.props.onAddToCart(toy)
         event.preventDefault();
     }
 
     handleInputChange(event) {
-        console.log(typeof(event.value));
-        this.setState({amount: event.value})
+        this.setState({ amount: Number.parseInt(event.target.value) })
     }
 
     render() {
@@ -39,14 +38,14 @@ class DetailToy extends React.Component {
                            magic formula to write perfect ad copy. It is based
                            on a number of factors.
                         </p>
-                        <div className='DetailToy-detail-info-price'>{`$${this.toy.price}.00`}</div>
+                        <div className='DetailToy-detail-info-price'>{formatCurrency(this.toy.price)}</div>
                         <div className='DetailToy-detail-info-form'>
                             <label>Quantity</label>
-                            <input type='number' min='1' value={this.state.amount} onChange={this.handleInputChange}/>
+                            <input type='number' min='1' value={this.state.amount} onChange={this.handleInputChange} />
                             <button className='button-big' onClick={this.handleButtonClick}>Add To Cart</button>
                         </div>
                     </div>
-                    <img src={this.toy.image} />
+                    <img src={this.toy.image} alt='' />
                 </div>
             </div>
         );

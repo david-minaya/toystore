@@ -14,7 +14,6 @@
     width: var(--size);
     height: var(--size);
     background-image: url('https://uploads-ssl.webflow.com/5badda2935e11303a89a461e/5baf75c3bf02346640399fec_cart-icon.svg');
-    background-color: aliceblue;
     background-repeat: no-repeat;
     background-position: center;
 }

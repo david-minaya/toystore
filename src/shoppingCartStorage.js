@@ -11,8 +11,7 @@ export default class ShoppingCartStorage {
 
         if (storedToy !== undefined) {
 
-            toy.amount = toy.amount + storedToy.amount;
-            console.log(toy.amount + storedToy.amount);
+            storedToy.amount = storedToy.amount + toy.amount;
             this._storeToys(toys);
 
         } else {
@@ -28,16 +27,12 @@ export default class ShoppingCartStorage {
 
     getToysAmount() {
 
-        console.log('ShoppingCartStorage -> getToysAmount');
-
         const toys = this.getToys();
         let amount = 0;
         
         toys.forEach(toy => {
            amount += toy.amount; 
         });
-
-        console.log(amount);
    
         return amount;
     }
