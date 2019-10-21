@@ -1,6 +1,7 @@
 import React from 'react';
 import './ItemToy.css';
 import { withRouter } from 'react-router-dom';
+import formatCurrency from './formatCurrency';
 
 class Toy extends React.Component {
 
@@ -17,9 +18,9 @@ class Toy extends React.Component {
     render() {
         return (
             <div className="ItemToy" onClick={this.handleItemToyClick}>
-                <img src={this.props.toy.image} />
+                <img src={this.props.toy.image} alt='' />
                 <h6>{this.props.toy.name}</h6>
-                <div className="ItemToy-price">{`$${this.props.toy.price}.00`}</div>
+                <div className="ItemToy-price">{formatCurrency(this.props.toy.price)}</div>
             </div>
         );
     }

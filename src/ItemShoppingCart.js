@@ -1,18 +1,32 @@
 import React from 'react';
 import './ItemShoppingCart.css';
+import formatCurrency from './formatCurrency';
 
-function ItemShoppingCart(props) {
-    return (
-        <div className='ItemShoppingCart'>
-            <img src='https://uploads-ssl.webflow.com/5baddb6a35e113da0e9a4802/5bae0f7a1f2da258291736c4_33908-7-plush-toy-file-min.png'/>
-            <div>
-                <div className='ItemShoppingCart-title'>Cute Dog</div>
-                <div className='ItemShoppingCart-price'>$24.00</div>
-                <a className='ItemShoppingCart-remove'>Remove</a>
+class ItemShoppingCart extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.handleRemoveToy = this.handleRemoveToy.bind(this);
+    }
+
+    handleRemoveToy(event) {
+        this.props.onRemoveToyFromCart(this.props.toy);
+        event.stopPropagation();
+    }
+
+    render() {
+        return (
+            <div className='ItemShoppingCart'>
+                <img src={this.props.toy.image} alt='' />
+                <div>
+                    <div className='ItemShoppingCart-title'>{this.props.toy.name}</div>
+                    <div className='ItemShoppingCart-price'>{formatCurrency(this.props.toy.price)}</div>
+                    <div className='ItemShoppingCart-remove' onClick={this.handleRemoveToy}>Remove</div>
+                </div>
+                <input type='text' value={this.props.toy.amount}/>
             </div>
-            <input type='text'/>
-        </div>
-    );
+        );
+    }
 }
 
 export default ItemShoppingCart;

@@ -17,7 +17,7 @@ class ShoppingCart extends React.Component {
             <div className="Shopping-cart" onClick={this.handleShoppingCartClick}>
                 <div className="Shopping-cart-title">Cart</div>
                 <div className="Shopping-cart-icon"></div>
-                <div className="Shopping-cart-counter">0</div>
+                <div className="Shopping-cart-counter">{this.props.amountOfToys}</div>
             </div>
         )
     }

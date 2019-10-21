@@ -1,6 +1,7 @@
 import React from 'react';
 import './ShoppingCartDialog.css';
 import ItemShoppingCart from './ItemShoppingCart';
+import formatCurrency from './formatCurrency';
 
 class ShippingCartDialog extends React.Component {
 
@@ -13,18 +14,39 @@ class ShippingCartDialog extends React.Component {
 
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
+        this.handleRemoveToyFromCart = this.handleRemoveToyFromCart.bind(this);
     }
 
+    _calculateSubtotal(toys) {
+
+        let subtotal = 0;
+
+        toys.forEach(toy => {
+            
+            const price = toy.amount * toy.price;
+            subtotal += price;
+        })
+                
+        return subtotal;
+    }
+    
     handleCloseDialog() {
         this.props.onCloseDialog();
     }
-
+    
     handleButtonClick(event) {
         this.setState({ isShowErrorMessage: true });
         event.stopPropagation();
     }
-
+    
+    handleRemoveToyFromCart(toy) {
+        this.props.onRemoveToyFromCart(toy);
+    }
+    
     render() {
+        
+        const subtotal = this._calculateSubtotal(this.props.toys);
+        
         return (
             <div className='ShoppingCartDialog-background' onClick={this.handleCloseDialog}>
                 <div className='ShoppingCartDialog-card'>
@@ -41,13 +63,21 @@ class ShippingCartDialog extends React.Component {
                         </svg>
                     </div>
                     <div className='ShoppingCartDialog-card-body'>
-                        <ItemShoppingCart />
-                        <ItemShoppingCart />
+                        {
+                            this.props.toys.map(toy => {
+                                return (
+                                    <ItemShoppingCart
+                                        key={toy.id}
+                                        toy={toy}
+                                        onRemoveToyFromCart={this.handleRemoveToyFromCart} />
+                                );
+                            })
+                        }
                     </div>
                     <div className='ShoppingCartDialog-card-footer'>
                         <div>
                             <div className='subtotal'>Subtotal</div>
-                            <div className='amount'>$128.00</div>
+                            <div className='amount'>{formatCurrency(subtotal)}</div>
                         </div>
                         <button className='button-big' onClick={this.handleButtonClick}>
                             Continue to Checkout
