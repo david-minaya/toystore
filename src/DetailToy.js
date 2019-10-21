@@ -1,6 +1,6 @@
 import React from 'react';
 import './DetailToy.css';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import PathBar from './PathBar';
 import formatCurrency from './formatCurrency';
 
@@ -8,8 +8,11 @@ class DetailToy extends React.Component {
 
     constructor(props) {
         super(props);
+
+        const state = this.props.location.state || {};
+
         this.state = { amount: 1 };
-        this.toy = this.props.location.state.toy;
+        this.toy = state.toy;
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -25,6 +28,11 @@ class DetailToy extends React.Component {
     }
 
     render() {
+
+        if (!this.toy) {
+            return (<Redirect to='/'/>)
+        }
+
         return (
             <div className='DetailToy'>
                 <PathBar name={this.toy.name} />

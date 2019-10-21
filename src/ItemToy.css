@@ -7,6 +7,8 @@
     text-align: center;
     padding: 24px 24px 32px;
     box-sizing: border-box;
+    transition: transform 300ms ease, box-shadow 300ms ease, -webkit-transform 300ms ease;
+    cursor: pointer;
 }
 
 .ItemToy:hover {

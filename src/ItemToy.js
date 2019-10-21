@@ -11,7 +11,6 @@ class Toy extends React.Component {
     }
 
     handleItemToyClick() {
-        console.log('Hello world!');
         this.props.history.push('/toy', {toy: this.props.toy});
     }
 

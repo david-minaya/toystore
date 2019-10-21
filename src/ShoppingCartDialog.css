@@ -37,6 +37,10 @@
     font-weight: 400;
 }
 
+.ShoppingCartDialog-card-header > .close-button {
+    cursor: pointer;
+}
+
 .ShoppingCartDialog-card-body {
     padding: 16px 32px;
     box-sizing: border-box;
