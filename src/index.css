@@ -37,6 +37,8 @@ button {
   outline: none;
   border: none;
   font-weight: 600;
+  transition: transform 300ms ease, box-shadow 300ms ease, -webkit-transform 300ms ease;
+  cursor: pointer;
 }
 
 button:hover {

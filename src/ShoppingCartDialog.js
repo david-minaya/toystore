@@ -49,10 +49,10 @@ class ShippingCartDialog extends React.Component {
         
         return (
             <div className='ShoppingCartDialog-background' onClick={this.handleCloseDialog}>
-                <div className='ShoppingCartDialog-card'>
+                <div className='ShoppingCartDialog-card' onClick={(event) => event.stopPropagation()}>
                     <div className='ShoppingCartDialog-card-header'>
                         <h4>Your Cart</h4>
-                        <svg className='ShoppingCartDialog-card-header-close-button'
+                        <svg className='close-button'
                             width="16px" height="16px" viewBox="0 0 16 16"
                             onClick={this.handleCloseDialog}>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

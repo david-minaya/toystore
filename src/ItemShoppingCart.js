@@ -23,7 +23,7 @@ class ItemShoppingCart extends React.Component {
                     <div className='ItemShoppingCart-price'>{formatCurrency(this.props.toy.price)}</div>
                     <div className='ItemShoppingCart-remove' onClick={this.handleRemoveToy}>Remove</div>
                 </div>
-                <input type='text' value={this.props.toy.amount}/>
+                <input type='text' defaultValue={this.props.toy.amount}/>
             </div>
         );
     }
