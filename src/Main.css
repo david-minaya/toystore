@@ -1,5 +1,121 @@
-.Main {
+.main {
     height: calc(100vh - var(--topbar-height));
     overflow-y: scroll;
     background-color: var(--background-color);
+}
+
+/* Hero */
+
+.hero {
+    height: 80vh;
+    background-image: url('https://uploads-ssl.webflow.com/5badda2935e11303a89a461e/5baddd4835e113c6299a48f5_li-tzuni-507346-unsplash.jpg');
+    background-position: 50% 94%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero > .card {
+    width: 570px;
+    height: 308px;
+    background-color: white;
+    border-radius: 16px;
+    text-align: center;
+    padding: 56px 48px;
+    box-sizing: border-box;
+}
+
+.hero > .card > .title {
+    margin-bottom: 16px;
+    color: var(--accent-color);
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+}
+
+/* Scroll button */
+
+.scroll-button {
+    --size: 64px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    background-color: white;
+    position: absolute;
+    top: -32px;
+}
+
+.scroll-button > .icon {
+    width: 16px;
+    height: 28px;
+    border: 2px solid #bbb;
+    margin: auto;
+    margin-top: 50%;
+    transform: translateY(-14px);
+    border-radius: 12px;
+}
+
+/* Categories */
+
+.categories {
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.stuffed-animals, .wooden-toys {
+    width: 570px;
+    height: 188px;
+    border-radius: 16px;
+    position: relative;
+    padding: 48px 40px;
+    margin: 0px 15px;
+    box-sizing: border-box;
+}
+
+.categories img {
+    width: 220px;
+    position: absolute;
+    bottom: 26px;
+}
+
+.categories h3 {
+    color: white;
+}
+
+/* ---------- */
+
+.stuffed-animals {
+    background-color: #ffc12c;
+}
+
+.stuffed-animals > img {
+    left: 15px;
+}
+
+.stuffed-animals > .info {
+    margin-left: 224px;
+}
+
+.wooden-toys > img {
+    right: 15px;
+}
+
+/* ---------- */
+
+.wooden-toys {
+    background-color: #fb416b;
+}
+
+.wooden-toys > .info {
+    margin-left: 80px;
+}
+
+.wooden-toys > .info > button {
+    margin-left: 70px;
 }

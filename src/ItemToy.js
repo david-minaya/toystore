@@ -3,7 +3,7 @@ import './ItemToy.css';
 import { withRouter } from 'react-router-dom';
 import formatCurrency from './formatCurrency';
 
-class Toy extends React.Component {
+class ItemToy extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,4 +25,4 @@ class Toy extends React.Component {
     }
 }
 
-export default withRouter(Toy);
+export default withRouter(ItemToy);

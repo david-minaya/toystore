@@ -1,7 +1,6 @@
 import React from 'react';
 import './DetailToy.css';
-import { withRouter, Redirect } from 'react-router-dom';
-import PathBar from './PathBar';
+import { withRouter, Redirect, Link } from 'react-router-dom';
 import formatCurrency from './formatCurrency';
 
 class DetailToy extends React.Component {
@@ -30,14 +29,18 @@ class DetailToy extends React.Component {
     render() {
 
         if (!this.toy) {
-            return (<Redirect to='/'/>)
+            return (<Redirect to='/' />)
         }
 
         return (
-            <div className='DetailToy'>
-                <PathBar name={this.toy.name} />
-                <div className='DetailToy-detail'>
-                    <div className='DetailToy-detail-info'>
+            <div className='detail-toy'>
+                <div className='path-bar'>
+                    <Link className='link' to='/'>Home</Link>
+                    <div className='icon'></div>
+                    <div className='name'>{this.toy.name}</div>
+                </div>
+                <div className='detail'>
+                    <div className='info'>
                         <h1>{this.toy.name}</h1>
                         <p>A successful marketing plan relies heavily on the
                            pulling-power of advertising copy. Writing result-oriented
@@ -46,8 +49,8 @@ class DetailToy extends React.Component {
                            magic formula to write perfect ad copy. It is based
                            on a number of factors.
                         </p>
-                        <div className='DetailToy-detail-info-price'>{formatCurrency(this.toy.price)}</div>
-                        <div className='DetailToy-detail-info-form'>
+                        <div className='price'>{formatCurrency(this.toy.price)}</div>
+                        <div className='form'>
                             <label>Quantity</label>
                             <input type='number' min='1' value={this.state.amount} onChange={this.handleInputChange} />
                             <button className='button-big' onClick={this.handleButtonClick}>Add To Cart</button>

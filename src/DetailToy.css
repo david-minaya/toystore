@@ -1,4 +1,4 @@
-.DetailToy {
+.detail-toy {
     height: calc(100vh - var(--topbar-height));
     display: flex;
     flex-flow: column;
@@ -6,7 +6,39 @@
     overflow-y: auto;
 }
 
-.DetailToy-detail {
+/* Path bar */
+
+.path-bar {
+    width: 1170px;
+    height: 48px;
+    margin: auto;
+    margin-top: 48px;
+    border: 2px solid #e5e5e5;
+    border-radius: 24px;
+    padding: 10px 28px;
+    box-sizing: border-box;
+}
+
+.path-bar .link, .path-bar .name {
+    display: inline;
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+    display: inline;
+}
+
+.path-bar .icon {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    filter: opacity(0.22);
+    background-image: url('https://uploads-ssl.webflow.com/5badda2935e11303a89a461e/5baf79eb570913b9781a96f2_arrow-right-mini-icon.svg');
+    color: #999;
+    margin: 0px 10px;
+}
+
+/* Detail */
+.detail-toy .detail {
     width: 1170px;
     height: 700px;
     padding: 80px;
@@ -18,24 +50,24 @@
     display: flex;
 }
 
-.DetailToy-detail-info {
+.detail-toy .detail .info {
     width: 50%;
     padding-right: 10%;
     box-sizing: border-box;
 }
 
-.DetailToy-detail-info h1 {
+.detail-toy .detail .info h1 {
     margin-bottom: 20px;
 }
 
-.DetailToy-detail-info p {
+.detail-toy .detail .info p {
     color: #999;
     font-size: 14px;
     line-height: 24px;
     margin-bottom: 28px;
 }
 
-.DetailToy-detail-info-price {
+.detail-toy .detail .info .price {
     margin-bottom: 32px;
     color: var(--accent-color);
     font-size: 24px;
@@ -43,13 +75,13 @@
     font-weight: 400;
 }
 
-.DetailToy-detail-info-form {
+.detail-toy .detail .info .form {
     width: 404px;
     height: 80px;
     margin-bottom: 16px;
 }
 
-.DetailToy-detail-info-form label {
+.detail-toy .detail .info .form label {
     display: block;
     margin-bottom: 8px;
     color: #111;
@@ -57,7 +89,7 @@
     font-weight: 600;
 }
 
-.DetailToy-detail-info-form input {
+.detail-toy .detail-info .form input {
     width: 88px;
     height: 48px;
     margin-right: 12px;
@@ -71,11 +103,11 @@
     outline: none;
 }
 
-.DetailToy-detail-info-form input:focus {
+.detail-toy .detail .info .form input:focus {
     border-color: var(--accent-color);
 }
 
-.DetailToy-detail img {
+.detail-toy .detail img {
     width: 440px;
     height: 440px;
 }
