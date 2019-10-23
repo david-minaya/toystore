@@ -6,12 +6,12 @@ class Category extends React.Component {
 
     render() {
         return (
-            <div className="Category">
+            <div className="category">
                 <h3>{this.props.categoryToy.name}</h3>
-                <div className="Category-primary-line">
-                    <div className="Category-secondary-line"></div>
+                <div className="primary-line">
+                    <div className="secondary-line"></div>
                 </div>
-                <div className="Category-toys">
+                <div className="toys">
                     {this.props.categoryToy.toys.map(toy => <ItemToy key={toy.id} toy={toy}/>)}
                 </div>
             </div>

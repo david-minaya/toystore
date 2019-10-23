@@ -1,9 +1,8 @@
 import React from 'react';
-import Header from './Header';
+import './App.css'
 import Main from './Main';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import DetailToy from './DetailToy';
-import ShoppingCart from './ShoppingCart';
 import ShoppingCartDialog from './ShoppingCartDialog';
 import ShoppingCartStorage from './shoppingCartStorage';
 
@@ -37,8 +36,8 @@ class App extends React.Component {
     handleAddToyToCart(toy) {
 
         this.shoppingCartStorage.addToy(toy);
-        
-        this.setState({ 
+
+        this.setState({
             toys: this.shoppingCartStorage.getToys(),
             toysAmount: this.shoppingCartStorage.getToysAmount(),
             isOpenShoppingCartDialog: true
@@ -48,8 +47,8 @@ class App extends React.Component {
     handleRemoveToyFromCart(toy) {
 
         this.shoppingCartStorage.removeToy(toy);
-        
-        this.setState({ 
+
+        this.setState({
             toys: this.shoppingCartStorage.getToys(),
             toysAmount: this.shoppingCartStorage.getToysAmount()
         });
@@ -60,10 +59,17 @@ class App extends React.Component {
         const toys = this.state.toys;
 
         return (
-            <div className='App'>
-                <Header>
-                    <ShoppingCart amountOfToys={this.state.toysAmount} onOpenDialog={this.handleOpenShoppingCartDialog} />
-                </Header>
+            <div>
+                <div className="header">
+                    <div>
+                        <Link to='/' className="title">ToyStore</Link>
+                        <div className="shopping-cart" onClick={this.handleOpenShoppingCartDialog}>
+                            <div className="title">Cart</div>
+                            <div className="icon"></div>
+                            <div className="counter">{this.state.toysAmount}</div>
+                        </div>
+                    </div>
+                </div>
                 <Switch>
                     <Route exact path='/' component={Main} />
                     <Route>
