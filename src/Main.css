@@ -61,7 +61,7 @@
 /* Categories */
 
 .categories {
-    height: 460px;
+    min-height: 460px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,14 +102,14 @@
     margin-left: 224px;
 }
 
-.wooden-toys img {
-    right: 15px;
-}
-
 /* ---------- */
 
 .wooden-toys {
     background-color: #fb416b;
+}
+
+.wooden-toys img {
+    right: 15px;
 }
 
 .wooden-toys .info {
@@ -151,7 +151,7 @@
 
     .categories {
         flex-flow: row wrap;
-        height: 432px;
+        min-height: 432px;
         padding: 88px 8px;
         box-sizing: content-box;
     }
@@ -180,5 +180,52 @@
 
     .wooden-toys .info h3 {
         text-align: end;
+    }
+}
+
+@media (max-width: 470px /* Mobile L */ ) {
+
+    .hero {
+        padding: 104px 16px;
+    }
+
+    .hero .card {
+        height: 300px;
+    }
+
+    .stuffed-animals, .wooden-toys {
+        width: 100%;
+        height: 280px;
+        margin-bottom: 60px;
+    }
+
+    .stuffed-animals .info h3, .wooden-toys .info h3 {
+        text-align: center;
+    }
+
+    .stuffed-animals img, .wooden-toys img {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 200px;
+    }
+
+    .stuffed-animals img, .wooden-toys img {
+        width: 176px;
+        bottom: 144px;
+    }
+
+    .stuffed-animals .info, .wooden-toys .info {
+        margin: auto;
+        float: bottom;
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .stuffed-animals .info button, .wooden-toys .info button {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        float: none;
     }
 }

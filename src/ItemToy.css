@@ -47,3 +47,11 @@
     font-weight: 600;
     margin: auto;
 }
+
+@media (max-width: 1024px /* Laptop*/ ) {
+
+    .item-toy {
+        flex: 1 0 44%;
+        max-width: 291px;
+    }
+}
