@@ -11,15 +11,17 @@ class ItemToy extends React.Component {
     }
 
     handleItemToyClick() {
-        this.props.history.push('/toy', {toy: this.props.toy});
+        this.props.history.push('/toy', { toy: this.props.toy });
     }
 
     render() {
         return (
-            <div className="ItemToy" onClick={this.handleItemToyClick}>
-                <img src={this.props.toy.image} alt='' />
+            <div className="item-toy" onClick={this.handleItemToyClick}>
+                <div className='img'>
+                    <img src={this.props.toy.image} alt='' />
+                </div>
                 <h6>{this.props.toy.name}</h6>
-                <div className="ItemToy-price">{formatCurrency(this.props.toy.price)}</div>
+                <div className="price">{formatCurrency(this.props.toy.price)}</div>
             </div>
         );
     }

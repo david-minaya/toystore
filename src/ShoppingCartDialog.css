@@ -12,13 +12,14 @@
 }
 
 .ShoppingCartDialog-card {
-    width: 480px;
+    max-width: 480px;
+    width: 90%;
     background-color: white;
     border-radius: 16px;
 }
 
 .ShoppingCartDialog-card-header {
-    width: 480px;
+    width: 100%;
     height: 81px;
     padding: 24px 32px;
     border-bottom: 1px solid #E6E6E6;
