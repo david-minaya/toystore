@@ -12,10 +12,7 @@ class ShippingCartDialog extends React.Component {
             isShowErrorMessage: false
         }
 
-        this.handleCloseDialog = this.handleCloseDialog.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
-        this.handleRemoveToyFromCart = this.handleRemoveToyFromCart.bind(this);
-        this.handleChangeToyAmount = this.handleChangeToyAmount.bind(this);
     }
 
     _calculateSubtotal(toys) {
@@ -31,21 +28,9 @@ class ShippingCartDialog extends React.Component {
         return subtotal;
     }
     
-    handleCloseDialog() {
-        this.props.onCloseDialog();
-    }
-    
     handleButtonClick(event) {
         this.setState({ isShowErrorMessage: true });
         event.stopPropagation();
-    }
-    
-    handleRemoveToyFromCart(toy) {
-        this.props.onRemoveToyFromCart(toy);
-    }
-
-    handleChangeToyAmount(toy) {
-        this.props.onChangeToyAmount(toy);
     }
     
     render() {
@@ -53,13 +38,13 @@ class ShippingCartDialog extends React.Component {
         const subtotal = this._calculateSubtotal(this.props.toys);
         
         return (
-            <div className='ShoppingCartDialog-background' onClick={this.handleCloseDialog}>
+            <div className='ShoppingCartDialog-background' onClick={this.props.onCloseDialog}>
                 <div className='ShoppingCartDialog-card' onClick={(event) => event.stopPropagation()}>
                     <div className='ShoppingCartDialog-card-header'>
                         <h4>Your Cart</h4>
                         <svg className='close-button'
                             width="16px" height="16px" viewBox="0 0 16 16"
-                            onClick={this.handleCloseDialog}>
+                            onClick={this.props.onCloseDialog}>
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                 <g fill-rule="nonzero" fill="#333333">
                                     <polygon points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8"></polygon>
@@ -74,8 +59,8 @@ class ShippingCartDialog extends React.Component {
                                     <ItemShoppingCart
                                         key={toy.id}
                                         toy={toy}
-                                        onChangeToyAmount={this.handleChangeToyAmount}
-                                        onRemoveToyFromCart={this.handleRemoveToyFromCart} />
+                                        onChangeToyAmount={this.props.onChangeToyAmount}
+                                        onRemoveToyFromCart={this.props.onRemoveToyFromCart} />
                                 );
                             })
                         }
