@@ -15,6 +15,7 @@ class ShippingCartDialog extends React.Component {
         this.handleCloseDialog = this.handleCloseDialog.bind(this);
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.handleRemoveToyFromCart = this.handleRemoveToyFromCart.bind(this);
+        this.handleChangeToyAmount = this.handleChangeToyAmount.bind(this);
     }
 
     _calculateSubtotal(toys) {
@@ -41,6 +42,10 @@ class ShippingCartDialog extends React.Component {
     
     handleRemoveToyFromCart(toy) {
         this.props.onRemoveToyFromCart(toy);
+    }
+
+    handleChangeToyAmount(toy) {
+        this.props.onChangeToyAmount(toy);
     }
     
     render() {
@@ -69,6 +74,7 @@ class ShippingCartDialog extends React.Component {
                                     <ItemShoppingCart
                                         key={toy.id}
                                         toy={toy}
+                                        onChangeToyAmount={this.handleChangeToyAmount}
                                         onRemoveToyFromCart={this.handleRemoveToyFromCart} />
                                 );
                             })

@@ -7,11 +7,22 @@ class ItemShoppingCart extends React.Component {
     constructor(props) {
         super(props);
         this.handleRemoveToy = this.handleRemoveToy.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
 
     handleRemoveToy(event) {
         this.props.onRemoveToyFromCart(this.props.toy);
         event.stopPropagation();
+    }
+
+    handleInputChange(event) {
+
+        const value = Number.parseInt(event.target.value);
+
+        if (value < 1) return;
+
+        this.props.toy.amount = value;
+        this.props.onChangeToyAmount(this.props.toy);
     }
 
     render() {
@@ -23,7 +34,7 @@ class ItemShoppingCart extends React.Component {
                     <div className='ItemShoppingCart-price'>{formatCurrency(this.props.toy.price)}</div>
                     <div className='ItemShoppingCart-remove' onClick={this.handleRemoveToy}>Remove</div>
                 </div>
-                <input type='text' defaultValue={this.props.toy.amount}/>
+                <input type='number' min='1' defaultValue={this.props.toy.amount} onChange={this.handleInputChange}/>
             </div>
         );
     }

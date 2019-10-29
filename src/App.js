@@ -23,6 +23,7 @@ class App extends React.Component {
         this.handleCloseShoppingCartDialog = this.handleCloseShoppingCartDialog.bind(this);
         this.handleAddToyToCart = this.handleAddToyToCart.bind(this);
         this.handleRemoveToyFromCart = this.handleRemoveToyFromCart.bind(this);
+        this.handleChangeToyAmount = this.handleChangeToyAmount.bind(this);
     }
 
     handleOpenShoppingCartDialog() {
@@ -47,6 +48,16 @@ class App extends React.Component {
     handleRemoveToyFromCart(toy) {
 
         this.shoppingCartStorage.removeToy(toy);
+
+        this.setState({
+            toys: this.shoppingCartStorage.getToys(),
+            toysAmount: this.shoppingCartStorage.getToysAmount()
+        });
+    }
+
+    handleChangeToyAmount(toy) {
+
+        this.shoppingCartStorage.updateToyAmount(toy);
 
         this.setState({
             toys: this.shoppingCartStorage.getToys(),
@@ -81,7 +92,8 @@ class App extends React.Component {
                     <ShoppingCartDialog
                         toys={toys}
                         onCloseDialog={this.handleCloseShoppingCartDialog}
-                        onRemoveToyFromCart={this.handleRemoveToyFromCart} />
+                        onRemoveToyFromCart={this.handleRemoveToyFromCart}
+                        onChangeToyAmount={this.handleChangeToyAmount}/>
                 }
             </div>
         );

@@ -37,6 +37,15 @@ export default class ShoppingCartStorage {
         return amount;
     }
 
+    updateToyAmount(toy) {
+
+        const toys = this.getToys();
+        const _toy = toys.find(_toy => _toy.id === toy.id);
+
+        _toy.amount = toy.amount;
+        this._storeToys(toys);
+    }
+
     removeToy(toy) {
         const toys = this.getToys();
         const index = toys.findIndex(storedToy => storedToy.id === toy.id);
